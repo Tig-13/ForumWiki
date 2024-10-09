@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../api';
-import { CATEGORY_API, POST_API } from '../tools/constants';
+import { CATEGORY_API, COMMENT_API, POST_API } from '../tools/constants';
 import LikeButtons from './LikeButtons'; 
 import PostInput from './PostInput';
 import Comments from './Comments'; 
@@ -110,7 +110,7 @@ const Posts = ({ user }) => {
 
     const handleDeleteComment = async (postId, commentId) => {
         try {
-            await api.delete(`${POST_API}/${postId}/comments/${commentId}`);
+            await api.delete(`${COMMENT_API}/${commentId}`);
             setComments(prev => ({
                 ...prev,
                 [postId]: prev[postId].filter(comment => comment.id !== commentId),
