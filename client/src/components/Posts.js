@@ -16,34 +16,39 @@ const Posts = ({ user }) => {
     const [comments, setComments] = useState({});
     const [likedPosts, setLikedPosts] = useState({}); 
 
-    const hasUserLikedPost = async (postId) => {
+    const hasUserLikedPost = useCallback(async (postId, userId) => {
         try {
             const response = await api.get(`${POST_API}/${postId}/liked/${user.id}`);
             const liked = response.data.liked;
             setLikedPosts(prev => ({ ...prev, [postId]: liked })); 
         } catch (error) {
+            console.log(user.id , postId);
             console.error('Error checking like status:', error);
             setMessage('Error checking like status');
         }
-    };
+    }, [user.id]);
 
-    const fetchPosts = useCallback(async () => {
+    const fetchPosts = useCallback(async (userId) => {
         try {
             const response = await api.get(`${POST_API}${CATEGORY_API}/${categoryId}`);
             const postsData = response.data;
             setPosts(postsData || []);
     
+            const initialLikedPosts = {};
+            postsData.forEach(post => { initialLikedPosts[post.id] = false; });
+            setLikedPosts(initialLikedPosts);
+
             if (postsData && postsData.length > 0) {
                 await Promise.all(postsData.map(async (post) => {
                     await fetchComments(post.id); 
-                    await hasUserLikedPost(post.id); 
+                    await hasUserLikedPost(post.id, userId); 
                 }));
             }
         } catch (error) {
             console.error('Error fetching posts:', error);
             setMessage('Error fetching posts');
         }
-    }, [categoryId]);
+    }, [categoryId, hasUserLikedPost]);
 
     const fetchCategory = useCallback(async () => {
         try {
@@ -122,7 +127,7 @@ const Posts = ({ user }) => {
     const handleLikePost = async (postId) => {
         const post = posts.find(post => post.id === postId);
 
-        console.log(user.id , postId); 
+        //console.log(user.id , postId); 
         
         try {
             const response = await api.post(`${POST_API}/${postId}/like`, { postId, userId: user.id });
@@ -137,8 +142,8 @@ const Posts = ({ user }) => {
     };
 
     const handleUnlikePost = async (postId) => {
-        if (!likedPosts[postId]) {
-            setMessage('You haven\'t liked this post yet');
+        if (likedPosts[postId] === undefined) {
+            setMessage('Unable to unlike post. Please try again later.');
             return;
         }
 
@@ -154,8 +159,10 @@ const Posts = ({ user }) => {
     };
 
     useEffect(() => {
-        fetchPosts();
-    }, [fetchPosts]);
+        if(user && user.id){
+            fetchPosts(user.id);
+        }
+    }, [user, fetchPosts]);
 
     useEffect(() => {
         fetchCategory();
