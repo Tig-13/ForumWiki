@@ -93,7 +93,8 @@ const Posts = ({ user }) => {
 
     const handleUpdateComment = async (postId, commentId) => {
         try {
-            const response = await api.put(`${POST_API}/${postId}/comments/${commentId}`, {
+            
+            const response = await api.put(`${COMMENT_API}/${commentId}`, {
                 content: editComment.content,
                 userId: user.id,
             });

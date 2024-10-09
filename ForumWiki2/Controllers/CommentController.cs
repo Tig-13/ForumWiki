@@ -51,12 +51,16 @@ namespace ForumWiki2.Controllers
             {
                 return NotFound(new { message = "Comment not found" });
             }
+            if (existingComment.UserId != comment.UserId)
+            { 
+                return BadRequest(new { message = "User is not owner" }); 
+            }
 
-            existingComment.Content = comment.Content;
-            existingComment.PostId = comment.PostId;
-
-            await context.SaveChangesAsync();  
-            return Ok(existingComment);  
+                existingComment.Content = comment.Content;
+                //existingComment.PostId = comment.PostId;
+                await context.SaveChangesAsync();
+                return Ok(existingComment);
+            
         }
 
         [HttpDelete("{id}")]
