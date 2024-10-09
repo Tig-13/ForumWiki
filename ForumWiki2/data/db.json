@@ -1,0 +1,299 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "admin",
+      "role": "Admin"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "password": "user",
+      "role": "User"
+    },
+    {
+      "id": "3",
+      "username": "123",
+      "password": "123",
+      "role": "User"
+    },
+    {
+      "id": "4",
+      "username": "321",
+      "password": "321",
+      "role": "User"
+    },
+    {
+      "id": 5,
+      "username": "444",
+      "password": "444",
+      "role": "User"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Technology"
+    },
+    {
+      "id": "2",
+      "name": "Health"
+    },
+    {
+      "id": "3",
+      "name": "Science"
+    },
+    {
+      "id": "4",
+      "name": "Travel"
+    },
+    {
+      "id": "5",
+      "name": "Food"
+    },
+    {
+      "id": "6",
+      "name": "Art"
+    },
+    {
+      "id": "7",
+      "name": "History"
+    },
+    {
+      "id": "8",
+      "name": "Business"
+    },
+    {
+      "id": "9",
+      "name": "Sports"
+    },
+    {
+      "id": "10",
+      "name": "Education"
+    },
+    {
+      "id": "11",
+      "name": "Entertainment"
+    },
+    {
+      "id": "12",
+      "name": "Fashion"
+    },
+    {
+      "id": "13",
+      "name": "Music"
+    },
+    {
+      "id": "14",
+      "name": "Nature"
+    },
+    {
+      "id": "15",
+      "name": "Politics"
+    },
+    {
+      "id": "16",
+      "name": "йййй"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "AI Revolution",
+      "content": "Artificial intelligence is transforming technology.",
+      "categoryId": 1,
+      "userId": 1,
+      "likes": 15,
+      "createdAt": "2024-01-15T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Quantum Computing",
+      "content": "Quantum computing may unlock future technological advances.",
+      "categoryId": 1,
+      "userId": 2,
+      "likes": 8,
+      "createdAt": "2024-01-20T11:00:00Z"
+    },
+    {
+      "id": "3",
+      "title": "Cybersecurity Best Practices",
+      "content": "Cybersecurity is critical in the tech-driven world.",
+      "categoryId": 1,
+      "userId": 3,
+      "likes": 12,
+      "createdAt": "2024-01-25T09:00:00Z"
+    },
+    {
+      "id": "4",
+      "title": "Healthy Living Tips",
+      "content": "Exercise regularly and maintain a balanced diet.",
+      "categoryId": 2,
+      "userId": 2,
+      "likes": 18,
+      "createdAt": "2024-02-05T14:30:00Z"
+    },
+    {
+      "id": "5",
+      "title": "Mental Health Awareness",
+      "content": "Mental health is just as important as physical health.",
+      "categoryId": 2,
+      "userId": 4,
+      "likes": 21,
+      "createdAt": "2024-02-10T08:45:00Z"
+    },
+    {
+      "id": "6",
+      "title": "Yoga for Beginners",
+      "content": "Yoga can help reduce stress and improve flexibility.",
+      "categoryId": 2,
+      "userId": 1,
+      "likes": 16,
+      "createdAt": "2024-02-15T09:30:00Z"
+    },
+    {
+      "id": "7",
+      "title": "Space Exploration Advances",
+      "content": "The future of space exploration is bright.",
+      "categoryId": 3,
+      "userId": 2,
+      "likes": 24,
+      "createdAt": "2024-03-01T10:00:00Z"
+    },
+    {
+      "id": "8",
+      "title": "Climate Change Research",
+      "content": "New studies on the effects of climate change are emerging.",
+      "categoryId": 3,
+      "userId": 3,
+      "likes": 11,
+      "createdAt": "2024-03-05T12:30:00Z"
+    },
+    {
+      "id": "9",
+      "title": "Discovering New Species",
+      "content": "Scientists have discovered new species in remote regions.",
+      "categoryId": 3,
+      "userId": 5,
+      "likes": 9,
+      "createdAt": "2024-03-15T08:15:00Z"
+    },
+    {
+      "id": "10",
+      "title": "Top Destinations for 2024",
+      "content": "Explore the most exciting travel destinations for 2024.",
+      "categoryId": 4,
+      "userId": 1,
+      "likes": 13,
+      "createdAt": "2024-04-02T07:00:00Z"
+    },
+    {
+      "id": "11",
+      "title": "Traveling on a Budget",
+      "content": "Traveling doesn't have to be expensive.",
+      "categoryId": 4,
+      "userId": 2,
+      "likes": 7,
+      "createdAt": "2024-04-08T16:45:00Z"
+    },
+    {
+      "id": "12",
+      "title": "Exotic Foods from Around the World",
+      "content": "Explore unique cuisines from various cultures.",
+      "categoryId": 5,
+      "userId": 4,
+      "likes": 14,
+      "createdAt": "2024-05-15T10:00:00Z"
+    },
+    {
+      "id": "13",
+      "title": "Healthy Snacks",
+      "content": "Try these healthy snacks that are both tasty and nutritious.",
+      "categoryId": 5,
+      "userId": 5,
+      "likes": 5,
+      "createdAt": "2024-05-20T12:00:00Z"
+    },
+    {
+      "id": "14",
+      "title": "Modern Art Trends",
+      "content": "Explore the latest trends in modern art.",
+      "categoryId": 6,
+      "userId": 1,
+      "likes": 12,
+      "createdAt": "2024-06-01T11:30:00Z"
+    },
+    {
+      "id": "15",
+      "title": "Famous Historical Events",
+      "content": "Learn about important events that shaped history.",
+      "categoryId": 7,
+      "userId": 3,
+      "likes": 18,
+      "createdAt": "2024-07-02T10:30:00Z"
+    },
+    {
+      "id": "16",
+      "title": "Top Business Strategies",
+      "content": "Successful business strategies from leading companies.",
+      "categoryId": 8,
+      "userId": 2,
+      "likes": 20,
+      "createdAt": "2024-08-15T09:00:00Z"
+    },
+    {
+      "id": "17",
+      "title": "Education in the Digital Age",
+      "content": "How technology is revolutionizing education.",
+      "categoryId": 10,
+      "userId": 5,
+      "likes": 10,
+      "createdAt": "2024-09-10T13:45:00Z"
+    },
+    {
+      "id": "18",
+      "title": "AI Revolution",
+      "content": "Artificial intelligence is transforming technology. ",
+      "categoryId": 1,
+      "userId": 0,
+      "likes": 0,
+      "createdAt": "2024-09-25T15:32:31.8157213Z"
+    },
+    {
+      "id": "19",
+      "title": "123",
+      "content": "12312312312312312",
+      "categoryId": 1,
+      "userId": 0,
+      "likes": 0,
+      "createdAt": "2024-09-25T15:32:50.102592Z"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "content": "Great post!",
+      "postId": 1,
+      "userId": 2
+    },
+    {
+      "id": "2",
+      "content": "Looking forward to more updates.",
+      "postId": 2,
+      "userId": 1
+    }
+  ],
+  "likes": [
+    {
+      "id": "1",
+      "postId": 1,
+      "userId": 2
+    },
+    {
+      "id": "2",
+      "postId": 2,
+      "userId": 3
+    }
+  ]
+}
