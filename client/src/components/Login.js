@@ -35,46 +35,53 @@ const Login = ({ setUser, appendLog }) => {
 
     return (
         <div className="max-w-md mx-auto mt-12">
-            <h2 className="text-2xl font-semibold text-gray-600 mb-4">Login</h2>
-            <form onSubmit={handleLogin} className="flex flex-col gap-4">
-                <label className="text-lg text-gray-700">
-                    Username:
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                        className="border border-gray-300 rounded-lg py-2 px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300 ease-in-out mt-1"
-                    />
-                </label>
-                <label className="text-lg text-gray-700">
-                    Password:
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                        className="border border-gray-300 rounded-lg py-2 px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300 ease-in-out mt-1"
-                    />
-                </label>
+        <h2 className="text-2xl font-semibold text-gray-600 mb-4 text-center">Login</h2>
+        <form
+            onSubmit={handleLogin}
+            className="grid grid-cols-[160px_1fr] gap-x-2 gap-y-4"
+        >
+            <label className="text-lg text-gray-700 flex items-center justify-end">
+                Username:
+            </label>
+            <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                className="border border-gray-300 rounded-lg py-2 px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300 ease-in-out mt-1"
+            />
+
+            <label className="text-lg text-gray-700 flex items-center justify-end">
+                Password:
+            </label>
+            <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="border border-gray-300 rounded-lg py-2 px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300 ease-in-out mt-1"
+            />
+
+            <div className="col-span-2 flex justify-center">
                 <button
                     type="submit"
                     className="bg-gray-500 text-white font-semibold py-2 px-6 rounded-lg shadow-md hover:bg-gray-600 transition-colors duration-300 ease-in-out"
                 >
                     Login
                 </button>
-            </form>
-            {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
-            <p className="mt-4 text-gray-600">
-                New user?{' '}
-                <button
-                    onClick={() => navigate('/register')}
-                    className="text-blue-500 hover:text-blue-600 transition-colors duration-300 ease-in-out"
-                >
-                    Register here
-                </button>
-            </p>
-        </div>
+            </div>
+        </form>
+        {errorMessage && <p className="text-red-500 mt-4">{errorMessage}</p>}
+        <p className="mt-4 text-gray-600 text-center">
+            New user?{' '}
+            <button
+                onClick={() => navigate('/register')}
+                className="text-blue-500 hover:text-blue-600 transition-colors duration-300 ease-in-out"
+            >
+                Register here
+            </button>
+        </p>
+    </div>
     );
 };
 
