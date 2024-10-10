@@ -42,11 +42,16 @@ namespace ForumWiki2.Controllers
                 return BadRequest(new { message = "User already exists" });
             }
 
+            if (model.Role != "User" && model.Role != "Admin")
+            {
+                return BadRequest(new { message = "Invalid role specified" });
+            }
+
             var user = new User
             {
                 Username = model.Username,
                 Password = model.Password,
-                Role = "User"
+                Role = model.Role
             };
             await context.Users.AddAsync(user);
             context.SaveChanges();
