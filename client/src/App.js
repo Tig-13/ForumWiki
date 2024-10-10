@@ -49,7 +49,7 @@ const App = () => {
                     <Route path="/login" element={<Login setUser={setUser} appendLog={appendLog} log={log} />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/add-category" element={<PrivateRoute user={user} element={<AddCategory />} />} />
-                    <Route path="/manage-users" element={<PrivateRoute user={user} element={<ManageUsers />} />} />
+                    <Route path="/manage-users" element={<PrivateRoute user={user} element={<ManageUsers />} requiredRole="Admin" />} />
                 </Routes>
 
                 <button
