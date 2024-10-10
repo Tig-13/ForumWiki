@@ -5,6 +5,7 @@ import api from '../api';
 const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [role, setRole] = useState('User');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
@@ -19,21 +20,19 @@ const Register = () => {
         }
 
         try {
-            const response = await api.post('/user/register', { username, password });
+            const response = await api.post('/user/register', { username, password, role });
 
-            // Используем данные из ответа (если они есть)
             if (response && response.data) {
                 setSuccessMessage('Registration successful! You can now log in.');
             }
 
-            // Очищаем поля
             setUsername('');
             setPassword('');
             setConfirmPassword('');
+            setRole('User');
             navigate('/login');
         } catch (error) {
             console.error('Registration Error:', error);
-            // Получаем сообщение об ошибке с сервера, если оно есть
             if (error.response && error.response.data && error.response.data.message) {
                 setErrorMessage(error.response.data.message);
             } else {
@@ -75,6 +74,18 @@ const Register = () => {
                         required
                         className="border border-gray-300 rounded-lg py-2 px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300 ease-in-out mt-1"
                     />
+                </label>
+                <label className="text-lg text-gray-700">
+                    Role:
+                    <select
+                        value={role}
+                        onChange={(e) => setRole(e.target.value)} 
+                        required
+                        className="border border-gray-300 rounded-lg py-2 px-4 shadow-md focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all duration-300 ease-in-out mt-1"
+                    >
+                        <option value="User">User</option>
+                        <option value="Admin">Admin</option>
+                    </select>
                 </label>
                 <button
                     type="submit"

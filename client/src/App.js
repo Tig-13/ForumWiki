@@ -8,6 +8,7 @@ import Register from './components/Register';
 import AddCategory from './components/AddCategory';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
+import ManageUsers from './components/ManageUsers';
 
 const App = () => {
     const [user, setUser] = useState({});
@@ -48,6 +49,7 @@ const App = () => {
                     <Route path="/login" element={<Login setUser={setUser} appendLog={appendLog} log={log} />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/add-category" element={<PrivateRoute user={user} element={<AddCategory />} />} />
+                    <Route path="/manage-users" element={<PrivateRoute user={user} element={<ManageUsers />} />} />
                 </Routes>
 
                 <button
