@@ -184,16 +184,18 @@ const Posts = ({ user }) => {
             ) : (
                 <ul className="space-y-6">
                     {posts.map((post) => (
-                        <li key={post.id} className="p-4 bg-gray-100 rounded-lg shadow-md">
+                        <li key={post.id} className="p-4 bg-gray-100 rounded-lg shadow-md ">
                             <h3 className="text-xl font-semibold text-gray-800 mb-2">{post.title}</h3>
                             <p className="text-gray-700 mb-4">{post.content}</p>
 
-                            <LikeButtons
-                                isLiked={likedPosts[post.id]} 
-                                likes={post.likes} 
-                                onLike={() => handleLikePost(post.id)} 
-                                onUnlike={() => handleUnlikePost(post.id)} 
-                            />
+                            <div className="mb-2">
+                                <LikeButtons
+                                    isLiked={likedPosts[post.id]} 
+                                    likes={post.likes} 
+                                    onLike={() => handleLikePost(post.id)} 
+                                    onUnlike={() => handleUnlikePost(post.id)} 
+                                />
+                            </div>
 
                             <ul className="space-y-4">
                                 {comments[post.id]?.map((comment) => (

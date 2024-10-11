@@ -40,7 +40,7 @@ const App = () => {
 
     return (
         <Router>
-            <div className="flex flex-col border border-gray-300 bg-gray-100 gap-4 p-6 rounded-lg shadow-md min-h-screen">
+            <div className="flex flex-col bg-gray-100 gap-4 p-6 rounded-lg shadow-md min-h-screen">
                 <Header user={user} onLogout={handleLogout} />
                 <Routes>
                     <Route path="/" element={<Home />} />
